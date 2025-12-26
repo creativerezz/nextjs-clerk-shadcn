@@ -21,6 +21,7 @@ npm run lint     # Run ESLint
 
 ### Authentication
 - **Clerk** handles all authentication via `@clerk/nextjs`
+- `middleware.ts` protects all routes except `/sign-in` and `/sign-up`
 - `ClerkProvider` wrapper at `components/clerk-provider.tsx` applies the shadcn theme
 - Sign-in/sign-up routes use catch-all segments: `app/sign-in/[[...sign-in]]/page.tsx`
 - Clerk theming syncs with shadcn via `@clerk/themes/shadcn.css` import in globals.css
@@ -48,6 +49,7 @@ npm run lint     # Run ESLint
 ```
 
 ### Key Files
+- `middleware.ts` - Clerk auth middleware (protects all routes by default)
 - `components/app-sidebar.tsx` - Dashboard navigation routes and sidebar layout
 - `components/clerk-provider.tsx` - Clerk with shadcn theme integration
 - `lib/utils.ts` - `cn()` utility for className merging

@@ -31,6 +31,7 @@ npm run dev
 
 ## Features
 
+- Protected routes via Clerk middleware (all routes require auth by default)
 - Collapsible sidebar navigation
 - Team switcher component
 - Breadcrumb navigation
@@ -47,6 +48,8 @@ npx shadcn@latest add <component>
 ## Project Structure
 
 ```
+middleware.ts             # Clerk auth (protects all routes)
+
 app/
 ├── layout.tsx          # Root layout with providers
 ├── page.tsx            # Dashboard home
